@@ -8,7 +8,7 @@ gem 'rails', '3.0.7'
 gem 'sqlite3-ruby', :require => 'sqlite3'
 
 group :development, :test do
-  gem "spork", :git => "git://github.com/chrismdp/spork.git"
+  gem "spork", '0.9.0.rc8'
   gem "rspec-rails", '>= 2.1.0'
 end
 
