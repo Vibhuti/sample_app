@@ -12,5 +12,6 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 group :development, :test do
   gem "spork", '0.9.0.rc8'
   gem "rspec-rails", '>= 2.1.0'
+  gem 'webrat'
 end
 

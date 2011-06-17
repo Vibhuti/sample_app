@@ -6,6 +6,7 @@ Spork.prefork do
   ENV["RAILS_ENV"] ||= 'test'
   require File.expand_path("../../config/environment", __FILE__)
   require 'rspec/rails'
+  require 'webrat'
 
 
 # Requires supporting files with custom matchers and macros, etc,
@@ -13,6 +14,11 @@ Spork.prefork do
   Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }
 
   RSpec.configure do |config|
+
+    # Webrat configuration
+Webrat.configure do |config|
+config.mode = :rails
+end
     # == Mock Framework
     #
     # If you prefer to use mocha, flexmock or RR, uncomment the appropriate line:
