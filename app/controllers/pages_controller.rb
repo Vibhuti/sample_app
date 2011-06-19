@@ -1,6 +1,9 @@
 class PagesController < ApplicationController
 
   def home
+    p "-----"
+    params.inspect
+    p "-----"
     @title = "Home"
   end
 
