@@ -1,4 +1,10 @@
 SampleApp::Application.routes.draw do
+<<<<<<< Updated upstream
+=======
+  resources :books
+
+  get "pages/home"
+>>>>>>> Stashed changes
 
   get "users/new"
 
