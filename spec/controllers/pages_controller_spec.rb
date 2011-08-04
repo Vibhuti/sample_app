@@ -61,6 +61,7 @@ describe PagesController do
       get 'help'
       response.should have_selector("title",
                                     :content => "#{@base_title} | Help")
+
     end
   end
 end
