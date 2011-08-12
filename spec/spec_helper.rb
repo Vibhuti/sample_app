@@ -16,9 +16,9 @@ Spork.prefork do
   RSpec.configure do |config|
 
     # Webrat configuration
-Webrat.configure do |config|
-config.mode = :rails
-end
+    Webrat.configure do |config|
+      config.mode = :rails
+    end
     # == Mock Framework
     #
     # If you prefer to use mocha, flexmock or RR, uncomment the appropriate line:

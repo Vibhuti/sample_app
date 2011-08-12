@@ -115,35 +115,34 @@ describe User do
         @user.should respond_to(:has_password?)
       end
       it "should return true if the passwords match" do
-      @user.has_password?(@attr[:password]).should be_true
+        @user.has_password?(@attr[:password]).should be_true
       end
 
-       it "should return false if the passwords don't match" do
-      @user.has_password?("invalid").should be_false
+      it "should return false if the passwords don't match" do
+        @user.has_password?("invalid").should be_false
       end
     end
 
-  describe "authenticate method" do
+    describe "authenticate method" do
 
-    it "should exist"do
-      User.should respond_to(:authenticate)
+      it "should exist" do
+        User.should respond_to(:authenticate)
+      end
+
+      it "should return nil on email/password mismatch" do
+        User.authenticate(@attr[:email], "wrongpass").should be_nil
+      end
+
+      it "should return nil for an email address with no user" do
+        User.authenticate("bar@foo.com", @attr[:password]).should be_nil
+      end
+
+      it "should return the user on email/password match" do
+        User.authenticate(@attr[:email], @attr[:password]).should == @user
+      end
     end
-
-    it "should return nil on email/password mismatch" do
-    User.authenticate(@attr[:email], "wrongpass").should be_nil
-    end
-
-    it "should return nil for an email address with no user" do
-      User.authenticate("bar@foo.com",@attr[:password]).should be_nil
-    end
-
-    it "should return the user on email/password match" do
-      User.authenticate(@attr[:email], @attr[:password]).should == @user
-   end
   end
 end
-end
-
 
 
 # == Schema Information
