@@ -1,5 +1,6 @@
 source 'http://rubygems.org'
 
+gem "rake", "0.8.7"
 gem 'rails', '3.0.7'
 gem 'autotest', '4.4.6'
 gem 'autotest-rails-pure', '4.1.2'
