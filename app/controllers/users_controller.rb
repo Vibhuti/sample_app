@@ -14,8 +14,7 @@ class UsersController < ApplicationController
     #raise params[:user].inspect
     @user = User.new(params[:user])
     if @user.save
-
-     redirect_to user_path(@user), :flash =>{:success => "Welcome to the Sample App!"}
+      redirect_to user_path(@user), :flash =>{:success => "Welcome to the Sample App!"}
     else
       @title = "Sign up"
       render 'new'
