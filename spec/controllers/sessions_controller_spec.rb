@@ -63,7 +63,7 @@ describe SessionsController do
     it "should sign in a user out" do
       test_sign_in(Factory(:user))
       delete :destroy
-      controler should_not be_signed_in
+      controller.should_not be_signed_in
       response.should redirect_to(root_path)
       end
     end
